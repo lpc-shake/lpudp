@@ -1,0 +1,33 @@
+# Copy this file to lpudp.toml and edit the station values.
+
+[station]
+network = "AM"
+station = "Z0000"
+location = "00"
+sample_rate_hz = 100.0
+
+[display]
+window_seconds = 90
+refresh_hz = 10
+channels = ["EHZ", "EHE", "EHN", "ENZ"]
+spectrogram = true
+
+[alert]
+enabled = true
+channel = "EHZ"
+sta_seconds = 6.0
+lta_seconds = 30.0
+threshold = 3.95
+reset = 0.9
+minimum_duration_seconds = 0.0
+sound_enabled = true
+sound_file = "alert.wav"
+screenshot_enabled = true
+
+[archive]
+# The archive worker is planned but is not active in this first build.
+enabled = false
+source = "seedlink"
+directory = "archive"
+mini_seed_version = 2
+encoding = "STEIM2"
